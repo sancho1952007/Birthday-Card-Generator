@@ -18,4 +18,11 @@
 
 <br>
 
+## What's New?
+<pre>
+- Resolved Bugs
+</pre>
+
+<br>
+
 ## <pre>Hope You Liked It!</pre>
