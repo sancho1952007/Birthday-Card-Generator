@@ -14,7 +14,7 @@
 <br>
 
 ## Current Version
-<pre>v1.1</pre>
+<pre>v1.7</pre>
 
 <br>
 
