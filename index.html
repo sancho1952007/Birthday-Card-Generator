@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Card Generator</title>
+</head>
+<body>
+    <div class="container">
+        <center><input class='name' placeholder="Enter First Name"></center>
+        <center><button class='generate-btn' onclick="GenerateCard()">Generate</button></center>
+    </div>
+</body>
+</html>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .name{
+        border: 0px;
+        border-radius: 50px;
+        background-color: lightgrey;
+        padding: 10px;
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .generate-btn{
+        border: 0px;
+        border-radius: 50px;
+        background-color: rgb(64, 64, 228);
+        padding: 10px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        margin-top: 2px;
+        cursor: pointer;
+    }
+
+    *{
+        outline: none;
+        transition: all .50s linear;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    *::selection{
+        background-color: rgb(161, 161, 241);
+    }
+    
+    @media screen and (orientation: landscape){
+        .name{
+            width: 100%;
+        }
+    }
+
+    @media screen and (orientation: portrait){
+        .name{
+            width: 90%;
+        }
+        
+    }
+</style>
+<script>
+    window.onload=function (){
+        url = new URL(window.location.href);
+        URLname = url.searchParams.get("/");
+        if (URLname != 'null'){
+            console.log(URLname)
+            //window.location.href="https://birthday-card.sanchogodinho.repl.co/"+URLname;
+        }
+        else{}
+    }
+
+    function GenerateCard(){
+        var name = document.querySelector('.name').value;
+        if (name.trim()!=''){
+            window.location.href='https://sancho1962007.github.io/Birthday-Card-Generator/Card.html?name='+name.replace(' ', '')
+        }
+    }
+
+    document.querySelector('.name').addEventListener('keyup', function(e){
+        if (e.keyCode==13){
+            GenerateCard();
+        }
+    });
+</script>
